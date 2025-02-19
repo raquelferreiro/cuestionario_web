@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Interés Romántico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cuestionario de Interés Romántico</h1>
+
+        <div id="questions-container">
+            </div>
+
+        <button id="submit-button">Obtener Resultado</button>
+
+        <div id="result-container" class="hidden">
+            <h2>Resultado:</h2>
+            <p id="result-text"></p>
+        </div>
+
+        <div id="qrcode-container"></div>
+
+        <script src="qrcode.min.js"></script>
+        <script>
+            // La URL pública de tu aplicación (REEMPLAZA ESTO CON LA URL REAL)
+            var publicURL = "file:///C:/Users/UO302817/Desktop/cuestionario_web/index.html";  // ***REEMPLAZA ESTO***
+
+            // Crear el código QR
+            var qrcode = new QRCode(document.getElementById("qrcode-container"), {
+                text: publicURL,
+                width: 128,
+                height: 128,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        </script>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
